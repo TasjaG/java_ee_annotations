@@ -12,7 +12,7 @@ public interface MetroStation {
 	
 	/** Number representing the amount of things stolen on this station. */
 	public int getStatistic();
-	public int setStatistic(int statistic);
+	public void setStatistic(int statistic);
 	
 	public int getStationID();
 	public void setStationID();
@@ -21,5 +21,5 @@ public interface MetroStation {
 	public void incrementStatistic();
 	
 	/** The rating of thievery on this station in % */
-	int countDangerRating();
+	public int countDangerRating();
 }

@@ -3,44 +3,41 @@ package metroteam.annotations;
 public class MetroStationClass implements MetroStation {
 
 	private String stationName;
+	private int statistic;
+	private int stationID;
+	private int dangerRating;
 	
 	public String getStationName() {
-		// TODO Auto-generated method stub
-		return null;
+		return stationName;
 	}
 
-	public String setStationName() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setStationName(String stationName) {
+		this.stationName = stationName;
 	}
 
 	public int getStatistic() {
-		// TODO Auto-generated method stub
-		return 0;
+		return statistic;
 	}
 
-	public int setStatistic(int statistic) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void setStatistic(int statistic) {
+		this.statistic = statistic;
 	}
 
 	public int getStationID() {
-		// TODO Auto-generated method stub
-		return 0;
+		return stationID;
 	}
 
-	public void setStationID() {
-		// TODO Auto-generated method stub
+	public void setStationID(int stationID) {
+		this.stationID = stationID;
 		
 	}
 
 	public void incrementStatistic() {
-		// TODO Auto-generated method stub
-		
+		statistic++;
 	}
 
 	public int countDangerRating() {
-		// TODO Auto-generated method stub
+		// TODO 
 		return 0;
 	}
 
