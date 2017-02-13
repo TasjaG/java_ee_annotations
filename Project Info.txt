@@ -1,0 +1,20 @@
+Backend:
+	Programming language: Java
+ 	Source:eclipse project folder.
+Frontend:
+	Programming language: JavaScript.
+	Other: HTML, CSS.
+
+	JavaScript:
+		-Map
+		-Quiz
+		-Advice
+		-Comments
+
+	Html/CSS:
+		-login form
+		-skeleton of the page
+		-Map
+		-Quiz
+		-Advice
+		-Comments
