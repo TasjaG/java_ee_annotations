@@ -2,6 +2,7 @@ package metroteam.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+/** Ignore */
 public class RandomAdvice1 implements RandomAdvice {
 
 	private String currentAdvice;
@@ -26,6 +27,16 @@ public class RandomAdvice1 implements RandomAdvice {
 
 	public void setAdvice(String[] advice) {
 		this.advice = advice;
+	}
+
+	public String getRandomAdvice() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setRandomAdvice() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
