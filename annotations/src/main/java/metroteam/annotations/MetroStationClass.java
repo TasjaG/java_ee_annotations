@@ -1,43 +1,47 @@
 package metroteam.annotations;
 
+/** Switch to storing types of Stolen Goods inside a station and comments inside Stolen Goods? */
 public class MetroStationClass implements MetroStation {
 
 	private String stationName;
-	private int statistic;
-	private int stationID;
-	private int dangerRating;
 	
 	public String getStationName() {
-		return stationName;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public void setStationName(String stationName) {
-		this.stationName = stationName;
+	public String setStationName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public int getStatistic() {
-		return statistic;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
-	public void setStatistic(int statistic) {
-		this.statistic = statistic;
+	public int setStatistic(int statistic) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	public int getStationID() {
-		return stationID;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
-	public void setStationID(int stationID) {
-		this.stationID = stationID;
+	public void setStationID() {
+		// TODO Auto-generated method stub
 		
 	}
 
 	public void incrementStatistic() {
-		statistic++;
+		// TODO Auto-generated method stub
+		
 	}
 
 	public int countDangerRating() {
-		// TODO 
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
