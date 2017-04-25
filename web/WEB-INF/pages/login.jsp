@@ -37,8 +37,6 @@
 </head>
 <body onload='document.loginForm.username.focus();'>
 
-	<h1>Spring Security Login Form (Database Authentication)</h1>
-
 	<div id="login-box">
 
 		<h3>Login with Username and Password</h3>
@@ -48,6 +46,11 @@
 		</c:if>
 		<c:if test="${not empty msg}">
 			<div class="msg">${msg}</div>
+		</c:if>
+		<c:if test="${afterRegister}">
+			<div class="msg">
+				<p>You can now log in</p>
+			</div>
 		</c:if>
 
 		<form name='loginForm'

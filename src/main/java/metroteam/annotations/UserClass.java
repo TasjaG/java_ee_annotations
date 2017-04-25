@@ -1,28 +1,57 @@
 package metroteam.annotations;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="users")
 public class UserClass {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private int userID;
-	private String userLogin;
 
-	public String getPassword(){
-		//Db connection
-		return null;
+	private String username;
+
+	private String password;
+
+	private int enabled;
+
+	public UserClass(String username, String password, int enabled) {
+		this.username = username;
+		this.password = password;
+		this.enabled = enabled;
 	}
 
-	public void setPassword(String password){};
-	public int getID(){
+	public int getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public int getUserID() {
 		return userID;
 	}
-	public void setID(int id){
-		this.userID = id;
-	}
-	/** Login is displayed near the user's comment */
-	public String getLogin(){
-		return userLogin;
-	}
-	public void setLogin(String login){
-		this.userLogin = login;
+
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 }

@@ -1,6 +1,6 @@
 package metroteam.annotations;
 
-public class CommentClass implements Comment {
+public class CommentClass {
 
 	private String comment;
 	private int id;
@@ -8,55 +8,41 @@ public class CommentClass implements Comment {
 	private int usedID;
 	
 	public CommentClass(String comment, int id, int stationID, int usedID) {
-		super();
 		this.comment = comment;
 		this.id = id;
 		this.stationID = stationID;
 		this.usedID = usedID;
 	}
 
-	public CommentClass(){
-		//TODO
-	}
-	
 	public String getComment() {
-		// TODO Auto-generated method stub
-		return null;
+		return comment;
 	}
 
 	public void setComment(String comment) {
-		// TODO Auto-generated method stub
-		
+		this.comment = comment;
 	}
 
-	public int getUserID() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getId() {
+		return id;
 	}
 
-	public void setUserID() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public int getCommentID() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void setCommentID() {
-		// TODO Auto-generated method stub
-		
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getStationID() {
-		// TODO Auto-generated method stub
-		return 0;
+		return stationID;
 	}
 
-	public void setStationID() {
-		// TODO Auto-generated method stub
-		
+	public void setStationID(int stationID) {
+		this.stationID = stationID;
 	}
 
+	public int getUsedID() {
+		return usedID;
+	}
+
+	public void setUsedID(int usedID) {
+		this.usedID = usedID;
+	}
 }

@@ -1,5 +1,10 @@
 package metroteam.annotations.web.controller;
 
+import metroteam.annotations.User;
+import metroteam.annotations.UserClass;
+import metroteam.annotations.UserWorker;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +28,27 @@ public class MainController {
 		return model;
 	}
 
+	@RequestMapping(value = "/register", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView registerPage() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("register");
+		return model;
+	}
+
+	@RequestMapping(value = "/register", method = {RequestMethod.GET, RequestMethod.POST}, params = {"username", "password"})
+	public ModelAndView registerPageA(@RequestParam String username, @RequestParam String password) {
+		if(username.equals("aaa")){
+			ApplicationContext context = new ClassPathXmlApplicationContext("SpringBeans.xml");
+			UserClass user = new UserClass(username, password, 1);
+			UserWorker worker = (UserWorker) context.getBean("worker");
+			worker.addUser(user);
+			ModelAndView model = new ModelAndView("redirect:/login");
+			model.addObject("afterRegister", true);
+			return model;
+		}
+		return new ModelAndView("redirect:/register");
+	}
+
 	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
 	public ModelAndView adminPage() {
 
@@ -35,13 +61,18 @@ public class MainController {
 
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
-			@RequestParam(value = "logout", required = false) String logout) {
+			@RequestParam(value = "logout", required = false) String logout,
+							  @RequestParam(value = "afterRegister", required = false) boolean afterRegister) {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
+			System.out.print(error);
 			model.addObject("error", "Invalid username and password!");
+		}
+		if(afterRegister){
+			model.addObject("afterRegister", true);
 		}
 
 		if (logout != null) {
