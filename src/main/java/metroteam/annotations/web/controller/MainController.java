@@ -1,6 +1,5 @@
 package metroteam.annotations.web.controller;
 
-import metroteam.annotations.User;
 import metroteam.annotations.UserClass;
 import metroteam.annotations.UserWorker;
 import org.springframework.context.ApplicationContext;
@@ -37,7 +36,7 @@ public class MainController {
 
 	@RequestMapping(value = "/register", method = {RequestMethod.GET, RequestMethod.POST}, params = {"username", "password"})
 	public ModelAndView registerPageA(@RequestParam String username, @RequestParam String password) {
-		if(username.equals("aaa")){
+		if(!username.isEmpty() && !password.isEmpty()){
 			ApplicationContext context = new ClassPathXmlApplicationContext("SpringBeans.xml");
 			UserClass user = new UserClass(username, password, 1);
 			UserWorker worker = (UserWorker) context.getBean("worker");
